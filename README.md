@@ -17,6 +17,14 @@ I have provided a dataset that you will use for this. The dataset and it's descr
 
 The goal of this project is to write a Bash script that:
 1. Counts the number of flights that were delayed more than 15 minutes into or out of Gainesville, FL (airport code GNV) during the timeframe covered by the dataset. (*2 points*)
+
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $13 ~ /1.00/' | wc -l
+
+
+awk 'BEGIN{FS=","} $7 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $16 ~ /1.00/' | wc -l
+
+
+
 2. Produces a table (text is fine) with the data to fill in this table (*13 points*):
 
 
@@ -25,6 +33,31 @@ GNV to: | Total flights | Total flights delayed (>15min) | Total flights delayed
 ATL |
 CLT |
 MIA |
+
+
+ATL
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"ATL"/' | wc -l = 1476
+
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"ATL"/' | awk 'BEGIN{FS=","} $13 ~ /1.00/' | wc -l  = 262
+
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"ATL"/' | awk 'BEGIN{FS=","} $24 >0.00' | wc -l  = 15
+
+
+CLT
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"CLT"/' | wc -l = 476
+
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"CLT"/' | awk 'BEGIN{FS=","} $13 ~ /1.00/' | wc -l  = 107
+
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"CLT"/' | awk 'BEGIN{FS=","} $24 >0.00' | wc -l  = 3
+
+MIA
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"MIA"/' | wc -l = 205
+
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"MIA"/' | awk 'BEGIN{FS=","} $13 ~ /1.00/' | wc -l  = 30
+
+awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"MIA"/' | awk 'BEGIN{FS=","} $24 >0.00' | wc -l  = 0
+
+
 
 3. Within a function, prints a list of all unique airport codes contained in the dataset. (*3 points*)
 
