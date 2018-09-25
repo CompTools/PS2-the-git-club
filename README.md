@@ -34,6 +34,7 @@ ATL |
 CLT |
 MIA |
 
+#The following three lines of code count the total number of flights, total number of flights delayed greater than fifteen minutes, and #the total number of flights delayed due to weather from GNV to ATL.
 
 ATL
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"ATL"/' | wc -l = 1476
@@ -42,6 +43,7 @@ awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","
 
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"ATL"/' | awk 'BEGIN{FS=","} $24 >0.00' | wc -l  = 15
 
+#The following three lines of code count the total number of flights, total number of flights delayed greater than fifteen minutes, and #the total number of flights delayed due to weather from GNV to CLT.
 
 CLT
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"CLT"/' | wc -l = 476
@@ -49,6 +51,8 @@ awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"CLT"/' | awk 'BEGIN{FS=","} $13 ~ /1.00/' | wc -l  = 107
 
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"CLT"/' | awk 'BEGIN{FS=","} $24 >0.00' | wc -l  = 3
+
+#The following three lines of code count the total number of flights, total number of flights delayed greater than fifteen minutes, and #the total number of flights delayed due to weather from GNV to MIA.
 
 MIA
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"MIA"/' | wc -l = 205
