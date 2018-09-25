@@ -61,6 +61,10 @@ awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","
 
 3. Within a function, prints a list of all unique airport codes contained in the dataset. (*3 points*)
 
+#This code searches the flights csv file, selects two columns that contain unique airport codes both for Arrival and Destination, and #lists the resulting contents of those columns. 
+
+flights.May2017-Apr2018.csv | cut -d, -f3,7 | sort | uniq
+
 4. Within a function lists the cities in Florida that have airports in the dataset. (*2 points*)
 
 **Bonus question:**  Asks for user input (see chapter 28) to enter either a airport code or city, state name and then calculates the number of flights as in question 1. (*5 points extra credit*)
