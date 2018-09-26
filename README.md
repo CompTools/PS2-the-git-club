@@ -34,7 +34,7 @@ ATL |
 CLT |
 MIA |
 
-#The following three lines of code count the total number of flights, total number of flights delayed greater than fifteen minutes, and #the total number of flights delayed due to weather from GNV to ATL.
+#The following three lines of code count the total number of flights, total number of flights delayed greater than fifteen minutes, and the total number of flights delayed due to weather from GNV to ATL.
 
 ATL
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"ATL"/' | wc -l = 1476
@@ -43,7 +43,7 @@ awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","
 
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"ATL"/' | awk 'BEGIN{FS=","} $24 >0.00' | wc -l  = 15
 
-#The following three lines of code count the total number of flights, total number of flights delayed greater than fifteen minutes, and #the total number of flights delayed due to weather from GNV to CLT.
+#The following three lines of code count the total number of flights, total number of flights delayed greater than fifteen minutes, and the total number of flights delayed due to weather from GNV to CLT.
 
 CLT
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"CLT"/' | wc -l = 476
@@ -52,7 +52,7 @@ awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","
 
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"CLT"/' | awk 'BEGIN{FS=","} $24 >0.00' | wc -l  = 3
 
-#The following three lines of code count the total number of flights, total number of flights delayed greater than fifteen minutes, and #the total number of flights delayed due to weather from GNV to MIA.
+#The following three lines of code count the total number of flights, total number of flights delayed greater than fifteen minutes, and the total number of flights delayed due to weather from GNV to MIA.
 
 MIA
 awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $7 ~ /"MIA"/' | wc -l = 205
@@ -65,9 +65,9 @@ awk 'BEGIN{FS=","} $3 ~ /"GNV"/' flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","
 
 3. Within a function, prints a list of all unique airport codes contained in the dataset. (*3 points*)
 
-#This code searches the flights csv file, selects two columns that contain unique airport codes both for Arrival and Destination, and #lists the resulting contents of those columns. 
+#This code searches the flights csv file, selects two columns that contain unique airport codes both for Arrival and Destination, and lists the resulting contents of those columns. 
 
-flights.May2017-Apr2018.csv | cut -d, -f3,7 | sort | uniq
+cat flights.May2017-Apr2018.csv | cut -d, -f3,7 | sort | uniq
 
 4. Within a function lists the cities in Florida that have airports in the dataset. (*2 points*)
 grep –F –w “FL” flights.May2017-Apr2018.csv | awk 'BEGIN{FS=","} $5~/FL/ {print $4}
