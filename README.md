@@ -88,19 +88,22 @@ For questions, 1, 3 and 4, I will mostly be looking for the right answer.
 
 **Your score on 1,3,4 (I'll fill this in when I grade):**
 
+All look good, so 2,3,2 points.
 
 For question 2, you will receive points for:
 
 Rubric item | Points | Your score
 ------------|--------|-----------
-Using github| 1 point |
-Having at least one commit from each member of the team | 2 points |
-Using meaningful commit messages | 2 points |
-Using functions correctly | 2 points |
-Using comments in code | 2 points
-Using spacing to make code readable | 2 points |
-Getting the correct answer | 2 points |
+Using github| 1 point |**1**
+Having at least one commit from each member of the team | 2 points |**2**
+Using meaningful commit messages | 2 points |**2**
+Using functions correctly | 2 points |**0** Questions 3 and 4 are not as functions. No functions in 2.
+Using comments in code | 2 points| **2**
+Using spacing to make code readable | 2 points |**1** Not really needed, but none used.
+Getting the correct answer | 2 points |**2**
 
 **Extra credit:**
+NA
 
 **Total points:**
+17/20
